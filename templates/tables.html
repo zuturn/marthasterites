@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{{ super() }}
+{% block sidebar %}
+
+{% include "sidebar.html" %}
+{% endblock %}
+{% block mainbar %}
+<div class="main-panel">
+{% include "mainbar.html" %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <span class="nav-tabs-title">表:</span>
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="active">
+                                        <a href="/tables?tb=table_data" data-toggle="tab">
+                                            table_data_1
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/tables?tb=table_data_2" data-toggle="tab">
+                                            <i class="material-icons">code</i> table_data_2
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="/tables?tb=table_data_3" data-toggle="tab">
+                                            <i class="material-icons">cloud</i> table_data_3
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table">
+                            <thead class="text-primary">
+                                {% for col in columns %}
+                                    <th>{{col}}</th>
+                                {% endfor %}
+                            </thead>
+                            <tbody>
+                                {% for row in data %}
+                                <tr>
+                                    {% for v in row %}
+                                        <td>{{ v }}</td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% include "base.html" %}
+<div class="content" style="margin-top:50px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">登录</h4>
+                        <p class="category">login</p>
+                    </div>
+                    <div class="card-content">
+                        <form action='/login' method='POST'>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">用户名</label>
+                                        <input type="text" name='username' class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">密码</label>
+                                        <input type="password" name='password' class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">登录</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{{ super() }}
+{% block sidebar %}
+
+{% include "sidebar.html" %}
+{% endblock %}
+{% block mainbar %}
+<div class="main-panel">
+{% include "mainbar.html" %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">导出Excel数据</h4>
+                        <p class="category">当前数据统计时间: {{ data_time }}</p>
+                    </div>
+                    <div class="card-content">
+                        {% if alert %}
+                        <div class="tim-typo">
+                            <span class="tim-note"></span>
+                            <p class="text-danger">
+                                导出码错误!
+                            </p>
+                        </div>
+                        {% endif %}
+                        <form action='/export' method='POST'>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">导出码</label>
+                                        <input type="text" name='exportCode' class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">点击导出</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
